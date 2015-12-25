@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export ARCH=arm64
 export KERNEL_DIR=`readlink -f .`
 export KERNEL_IMAGE_DIR=$KERNEL_DIR/arch/arm64/boot
 export PACKAGE_DIR=$KERNEL_DIR/OUT
