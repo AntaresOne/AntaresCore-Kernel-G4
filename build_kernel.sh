@@ -147,6 +147,16 @@ if [ -e $KERNEL_DIR/arch/arm64/boot/Image ]; then
 	FILESIZE=$(stat -c%s "$FILENAME")
 	echo "Size of $FILENAME = $FILESIZE bytes."
 	
+	if [ -e /usr/bin/adb ]; then
+	    read -t 5 -p "Do you want to push the new package now? (5 sec timeout [y/n])"
+	    if [ "$REPLY" == "y" ]; then
+	        echo "Waiting for device..."
+	        adb wait-for-device
+	        adb push $FILENAME /sdcard/
+	        echo "$FILENAME pushed in /sdcard!"
+	    fi
+	fi
+	
 	cd $KERNEL_DIR
 else
 	echo "Operation failed! No kernel image found!"
