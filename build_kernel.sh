@@ -24,7 +24,7 @@ if [ "$1" != "" ]; then
 	    export VERSION=-v$2-"$DEVICE"-AOSP-MM-DEBUG
 	else
 	    # Do not update version number
-	    export VERSION=-v1.0.0-"$DEVICE"-AOSP-MM-DEBUG
+	    export VERSION=-v1.1-"$DEVICE"-AOSP-MM-DEBUG
 	fi
     else 
         # Only update version number, release package (ex. ./build_kernel.sh 1.0.1)
@@ -34,7 +34,7 @@ if [ "$1" != "" ]; then
 else
     # Default
     export PACKAGE_DIR=$KERNEL_DIR/OUT/release
-    export VERSION=-v1.0.0-"$DEVICE"-AOSP-MM
+    export VERSION=-v1.1-"$DEVICE"-AOSP-MM
 fi
 
 time_start=$(date +%s.%N)
