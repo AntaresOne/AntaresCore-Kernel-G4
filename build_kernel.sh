@@ -112,7 +112,7 @@ if [ -e $KERNEL_DIR/arch/arm64/boot/Image ]; then
 	cp $KERNEL_DIR/arch/arm64/boot/Image $PACKAGE_DIR/Image
 	echo "Making bootimage"
 	if [ -e $KERNEL_DIR/scripts/dtc/dtc ]; then
-	    ./dtbtool --force-v2 -s 4096 -d "qcom,msm-id = <" -p $KERNEL_DIR/scripts/dtc/ -o $PACKAGE_DIR/dt.img $KERNEL_DIR/arch/arm64/boot/dts/
+	    ./dtbtool --force-v3 -s 4096 -p $KERNEL_DIR/scripts/dtc/ -o $PACKAGE_DIR/dt.img $KERNEL_DIR/arch/arm64/boot/dts/
 	else
 	    echo -e "Missing DTC binary in \e[91m$KERNEL_DIR/scripts/dtc\e[39m"
 	fi
