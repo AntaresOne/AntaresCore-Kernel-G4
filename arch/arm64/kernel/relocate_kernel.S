@@ -20,7 +20,7 @@
 #define IND_SOURCE_BIT		3
 
 #ifdef CONFIG_KEXEC_HARDBOOT
-// MSM8994 specific
+// MSM8992/MSM8994 specific
 #define MPM2_MPM_PS_HOLD	0xFC4AB000
 #endif
 
@@ -165,7 +165,7 @@ hardboot:
 	ldr	x1, =KEXEC_HB_PAGE_MAGIC
 	str	x1, [x0]
 	/* Processor specific reboot code.
-	 * MSM8994/Snapdragon 810 version.
+	 * MSM8992/MSM8994 version.
 	 */
 	ldr	x0, =MPM2_MPM_PS_HOLD
 	str	xzr, [x0]
