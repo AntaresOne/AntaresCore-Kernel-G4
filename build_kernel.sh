@@ -23,7 +23,7 @@ if [ "$1" != "" ]; then
 	    export VERSION=-v$2-H815-LGE-MM-6.0-DEBUG
 	else
 	    # Do not update version number
-	    export VERSION=-v1.1.0-H815-LGE-MM-6.0-DEBUG
+	    export VERSION=-v1.1.1-H815-LGE-MM-6.0-DEBUG
 	fi
     else 
         # Only update version number, release package (ex. ./build_kernel.sh 1.0.1)
@@ -33,7 +33,7 @@ if [ "$1" != "" ]; then
 else
     # Default
     export PACKAGE_DIR=$KERNEL_DIR/OUT/release
-    export VERSION=-v1.1.0-H815-LGE-MM-6.0
+    export VERSION=-v1.1.1-H815-LGE-MM-6.0
 fi
 
 time_start=$(date +%s.%N)
