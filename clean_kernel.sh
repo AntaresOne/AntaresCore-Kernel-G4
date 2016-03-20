@@ -14,9 +14,12 @@ rm -f $KERNEL_IMAGE_DIR/Image
 rm -f $KERNEL_IMAGE_DIR/Image.gz
 rm -f $KERNEL_IMAGE_DIR/Image.gz-dtb
 rm -rf $KERNEL_DIR/kernel/usr
-rm -rf $PACKAGE_DIR/system
-rm -f $PACKAGE_DIR/*.zip
-rm -f $PACKAGE_DIR/boot.img
+rm -rf $PACKAGE_DIR/debug/system
+rm -f $PACKAGE_DIR/debug/*.zip
+rm -f $PACKAGE_DIR/debug/boot.img
+rm -rf $PACKAGE_DIR/release/system
+rm -f $PACKAGE_DIR/release/*.zip
+rm -f $PACKAGE_DIR/release/boot.img
 
 for i in `find . -type f \( -iname \*.rej \
 				-o -iname \*.orig \
