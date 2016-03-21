@@ -11,7 +11,7 @@ export CROSS_COMPILE=`readlink -f ..`/aarch64-linux-android-4.9/bin/aarch64-linu
 export INITRAMFS_SOURCE=`readlink -f ..`/ramdisk-h815
 export INITRAMFS_TMP=/tmp/initramfs_source
 export KERNEL_CONFIG=antares_h815_defconfig
-export CMDLINE="console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=p1 androidboot.selinux=enforcing user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1"
+export CMDLINE="console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x37 boot_cpus=0-5"
 
 # Debug & version number control
 if [ "$1" != "" ]; then
