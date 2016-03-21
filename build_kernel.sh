@@ -4,12 +4,13 @@
 
 export ARCH=arm64
 export CPU_COUNT=$(($(nproc) + 1))
+export DEVICE="H815"
 export HOSTNAME=`uname -n`
 export KERNEL_DIR=`readlink -f .`
 export CROSS_COMPILE=`readlink -f ..`/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 export INITRAMFS_SOURCE=`readlink -f ..`/ramdisk-h815
 export INITRAMFS_TMP=/tmp/initramfs_source
-export KERNEL_CONFIG=antares_defconfig
+export KERNEL_CONFIG=antares_h815_defconfig
 export CMDLINE="console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=p1 androidboot.selinux=enforcing user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1"
 
 # Debug & version number control
@@ -20,20 +21,20 @@ if [ "$1" != "" ]; then
 	export PACKAGE_DIR=$KERNEL_DIR/OUT/debug
 	if [ "$2" != "" ]; then
 	    # Also update version number (ex. ./build_kernel.sh debug 1.0.1)
-	    export VERSION=-v$2-H815-LGE-MM-6.0-DEBUG
+	    export VERSION=-v$2-"$DEVICE"-AOSP-MM-DEBUG
 	else
 	    # Do not update version number
-	    export VERSION=-v1.0.0-H815-LGE-MM-6.0-DEBUG
+	    export VERSION=-v1.0.0-"$DEVICE"-AOSP-MM-DEBUG
 	fi
     else 
         # Only update version number, release package (ex. ./build_kernel.sh 1.0.1)
 	export PACKAGE_DIR=$KERNEL_DIR/OUT/release
-	export VERSION=-v$1-H815-LGE-MM-6.0
+	export VERSION=-v$1-"$DEVICE"-AOSP-MM
     fi
 else
     # Default
     export PACKAGE_DIR=$KERNEL_DIR/OUT/release
-    export VERSION=-v1.0.0-H815-LGE-MM-6.0
+    export VERSION=-v1.0.0-"$DEVICE"-AOSP-MM
 fi
 
 time_start=$(date +%s.%N)
