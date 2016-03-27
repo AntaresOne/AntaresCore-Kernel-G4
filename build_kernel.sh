@@ -3,6 +3,7 @@
 # AntaresCore Kernel build script
 
 export ARCH=arm64
+export SUBARCH=$ARCH
 export CPU_COUNT=$(($(nproc) + 1))
 export HOSTNAME=`uname -n`
 export KERNEL_DIR=`readlink -f .`
