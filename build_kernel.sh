@@ -13,6 +13,8 @@ export KERNEL_CONFIG=antares_defconfig
 export CMDLINE="console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=p1 androidboot.selinux=enforcing user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1"
 
 # Debug & version number control
+DEFVER="1.2"
+
 if [ "$1" != "" ]; then
     if [ "$1" == "debug" ]; then
         # Debug package (ex. ./build_kernel.sh debug)
@@ -23,7 +25,7 @@ if [ "$1" != "" ]; then
 	    export VERSION=-v$2-H815-LGE-MM-6.0-DEBUG
 	else
 	    # Do not update version number
-	    export VERSION=-v1.1.1-H815-LGE-MM-6.0-DEBUG
+	    export VERSION=-v$DEFVER-H815-LGE-MM-6.0-DEBUG
 	fi
     else 
         # Only update version number, release package (ex. ./build_kernel.sh 1.0.1)
@@ -33,7 +35,7 @@ if [ "$1" != "" ]; then
 else
     # Default
     export PACKAGE_DIR=$KERNEL_DIR/OUT/release
-    export VERSION=-v1.1.1-H815-LGE-MM-6.0
+    export VERSION=-v$DEFVER-H815-LGE-MM-6.0
 fi
 
 time_start=$(date +%s.%N)
