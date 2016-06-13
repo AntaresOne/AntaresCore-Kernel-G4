@@ -1,8 +1,8 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 3.10.101 Kernel Configuration
+# Linux/arm64 3.10.102 Kernel Configuration
 #
-# AntaresCore H815 #
+# AntaresCore P1 #
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -3502,8 +3502,6 @@ CONFIG_STAGING=y
 # CONFIG_VT6656 is not set
 # CONFIG_DX_SEP is not set
 # CONFIG_ZSMALLOC is not set
-# CONFIG_ZRAM is not set
-# CONFIG_ZRAM_DEBUG is not set
 # CONFIG_FB_SM7XX is not set
 # CONFIG_CRYSTALHD is not set
 # CONFIG_FB_XGI is not set
@@ -3834,7 +3832,7 @@ CONFIG_FS_MBCACHE=y
 # CONFIG_OCFS2_FS is not set
 # CONFIG_BTRFS_FS is not set
 # CONFIG_NILFS2_FS is not set
-# CONFIG_FS_POSIX_ACL is not set
+CONFIG_FS_POSIX_ACL=y
 CONFIG_FILE_LOCKING=y
 CONFIG_FSNOTIFY=y
 CONFIG_DNOTIFY=y
@@ -3927,7 +3925,6 @@ CONFIG_F2FS_FS_POSIX_ACL=y
 CONFIG_F2FS_FS_SECURITY=y
 # CONFIG_F2FS_CHECK_FS is not set
 # CONFIG_F2FS_FS_ENCRYPTION is not set
-# CONFIG_F2FS_IO_TRACE is not set
 CONFIG_NETWORK_FILESYSTEMS=y
 # CONFIG_NFS_FS is not set
 # CONFIG_NFSD is not set
