@@ -14,7 +14,7 @@ export KERNEL_CONFIG=antares_defconfig
 export CMDLINE="console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=p1 androidboot.selinux=enforcing user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cpu_max_a53=1632000 cpu_max_a57=2016000"
 
 # Debug & version number control
-DEFVER="1.2.1"
+DEFVER="1.2.2"
 
 if [ "$1" != "" ]; then
     if [ "$1" == "debug" ]; then
