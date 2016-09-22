@@ -167,7 +167,7 @@ clean() {
     export KERNEL_IMAGE_DIR=$KERNEL_DIR/arch/arm64/boot
     echo "Cleaning out"
     cp -pv .config .config.bkp
-    make $ARCH $CROSS_COMPILE mrproper
+    make ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE mrproper
     cp -pv .config.bkp .config
     make clean && make mrproper
     rm -f $KERNEL_IMAGE_DIR/Image
