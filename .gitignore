@@ -46,6 +46,14 @@ modules.builtin
 /Module.symvers
 
 #
+# Builds
+#
+OUT/debug/boot.img
+OUT/debug/*.zip
+OUT/release/boot.img
+OUT/release/*.zip
+
+#
 # Debian directory (make deb-pkg)
 #
 /debian/
